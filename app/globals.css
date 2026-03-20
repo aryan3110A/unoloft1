@@ -25,7 +25,7 @@
 [data-mode="girls"] {
   --mc: #2d5fa8;
   --mlt: #dbeafe;
-  --mbg: #aedefc;
+  --mbg: #fadae6;
   --sb: #f0f7ff;
 }
 
@@ -46,12 +46,15 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background: #f5f9ff;
   color: #2d3e60;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -79,7 +82,7 @@ img {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #1a4898;
+  background: #53cbf3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2243,7 +2246,7 @@ footer {
 .mob-m {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
   width: 270px;
   height: 100vh;
   background: #fff;
@@ -2252,12 +2255,13 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(110%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: -10px 0 38px rgba(0, 0, 0, 0.12);
 }
 
 .mob-m.on {
-  right: 0;
+  transform: translateX(0);
 }
 
 .mob-x {
@@ -2388,6 +2392,76 @@ footer {
 }
 
 @media (max-width: 580px) {
+  #nav {
+    padding: 0 18px;
+  }
+
+  #hero {
+    padding: 78px 18px 0;
+  }
+
+  .hero-inner {
+    gap: 30px;
+    padding-bottom: 56px;
+  }
+
+  .hero-l,
+  .hero-r {
+    min-width: 0;
+  }
+
+  .city-wm {
+    left: 0;
+    font-size: clamp(62px, 22vw, 120px);
+  }
+
+  .hero-ey {
+    font-size: 0.62rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-loc {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.4;
+    margin-bottom: 22px;
+  }
+
+  .hero-pills {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .h-pill {
+    max-width: 100%;
+    padding: 6px 12px;
+    font-size: 0.74rem;
+  }
+
+  .hero-btns {
+    gap: 10px;
+  }
+
+  .btn-ora,
+  .btn-ghost {
+    padding: 11px 18px;
+    font-size: 0.84rem;
+  }
+
+  .hero-stats {
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+
+  .hs {
+    min-width: calc(50% - 6px);
+  }
+
+  .hs-div {
+    display: none;
+  }
+
   .avail-g {
     grid-template-columns: 1fr;
   }
