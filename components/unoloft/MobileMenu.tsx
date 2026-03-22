@@ -53,9 +53,7 @@ export default function MobileMenu({
         <a href="#rooms" onClick={onClose}>
           Rooms
         </a>
-        <a href="#availability" onClick={onClose}>
-          Availability
-        </a>
+
         <a href="#gallery" onClick={onClose}>
           Gallery
         </a>

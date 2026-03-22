@@ -43,9 +43,7 @@ export default function Navbar({
         <li>
           <a href="#facilities">Facilities</a>
         </li>
-        <li>
-          <a href="#availability">Availability</a>
-        </li>
+
         <li>
           <a href="#gallery">Gallery</a>
         </li>

@@ -7,7 +7,6 @@ import Loader from "@/components/unoloft/Loader";
 import MobileMenu from "@/components/unoloft/MobileMenu";
 import Navbar from "@/components/unoloft/Navbar";
 import { GALLERY_ITEMS } from "@/components/unoloft/data";
-import AvailabilitySection from "@/components/unoloft/sections/AvailabilitySection";
 import ContactSection from "@/components/unoloft/sections/ContactSection";
 import FacilitiesSection from "@/components/unoloft/sections/FacilitiesSection";
 import FooterSection from "@/components/unoloft/sections/FooterSection";
@@ -18,7 +17,6 @@ import MapSection from "@/components/unoloft/sections/MapSection";
 import PgIntroSection from "@/components/unoloft/sections/PgIntroSection";
 import RoomsSection from "@/components/unoloft/sections/RoomsSection";
 import TestimonialsSection from "@/components/unoloft/sections/TestimonialsSection";
-import WhySection from "@/components/unoloft/sections/WhySection";
 import type { GalleryFilter, Mode } from "@/components/unoloft/types";
 
 const SCROLL_OFFSET = 75;
@@ -202,8 +200,6 @@ export default function UnoloftPage() {
       <PgIntroSection />
       <FacilitiesSection />
       <RoomsSection />
-      <AvailabilitySection />
-      <WhySection />
 
       <GallerySection
         mode={mode}

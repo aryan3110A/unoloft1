@@ -456,11 +456,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     answer:
       "Aster Homes (Boys): 24/7 access with log after 10 PM. Iris Homes (Girls): entry until 10 PM; prior notice required for late returns. Visitors in common areas 9 AM to 8 PM only.",
   },
-  {
-    question: "Are meals customizable for dietary preferences?",
-    answer:
-      "Yes! We serve vegetarian, non-vegetarian, vegan, and Jain diets. Residents can inform the kitchen of allergies or special dietary needs at any time.",
-  },
+
   {
     question: "What is the minimum lock-in period?",
     answer:
