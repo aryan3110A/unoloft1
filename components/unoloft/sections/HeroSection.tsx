@@ -35,9 +35,7 @@ export default function HeroSection({ mode }: HeroSectionProps) {
     <section id="hero">
       <div className="hero-noise" />
       <div className="hero-glow" />
-      <div className="city-wm">
-        Ahmed<span className="hl">abad</span>
-      </div>
+
 
       <div className="hero-inner">
         <div className="hero-l">

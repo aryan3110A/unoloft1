@@ -7,7 +7,7 @@
   --navy: #162d5e;
   --navy2: #1e3a7a;
   --gold: #c9a84c;
-  --cream: #eef5ff;
+  --cream: #ffffff;
   --gray: #6b7280;
   --gray2: #2d3e60;
   --boys: #1e3a7a;
@@ -17,23 +17,23 @@
 
 [data-mode="boys"] {
   --mc: #1e3a7a;
-  --mlt: #dbeafe;
-  --mbg: #aedefc;
-  --sb: #eef5ff;
+  --mlt: #ffffff;
+  --mbg: #ffffff;
+  --sb: #ffffff;
 }
 
 [data-mode="girls"] {
   --mc: #2d5fa8;
-  --mlt: #dbeafe;
-  --mbg: #fadae6;
-  --sb: #f0f7ff;
+  --mlt: #ffffff;
+  --mbg: #ffffff;
+  --sb: #ffffff;
 }
 
 [data-mode="all"] {
   --mc: #162d5e;
-  --mlt: #dbeafe;
-  --mbg: #aedefc;
-  --sb: #eef5ff;
+  --mlt: #ffffff;
+  --mbg: #ffffff;
+  --sb: #ffffff;
 }
 
 *,
@@ -52,7 +52,7 @@ html {
 
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
-  background: #f5f9ff;
+  background: #ffffff;
   color: #2d3e60;
   max-width: 100%;
   overflow-x: hidden;
@@ -82,7 +82,7 @@ img {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #53cbf3;
+  background: #060d1e;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,31 +150,42 @@ img {
   left: 0;
   width: 100%;
   z-index: 1000;
-  height: 70px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
   transition: var(--t);
 }
 
 #nav.s {
-  background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
-  height: 62px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: var(--t);
+}
+
+#nav.s .nav-logo {
+  gap: 8px;
 }
 
 .logo-sq {
-  width: 38px;
-  height: 38px;
-  border-radius: 11px;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   background: var(--brand);
   display: flex;
   align-items: center;
@@ -182,9 +193,16 @@ img {
   font-family: "Cormorant Garamond", serif;
   font-weight: 900;
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   box-shadow: 0 4px 14px rgba(240, 101, 32, 0.35);
   transition: var(--t);
+}
+
+#nav.s .logo-sq {
+  width: 34px;
+  height: 34px;
+  font-size: 1rem;
+  border-radius: 9px;
 }
 
 .logo-sq:hover {
@@ -193,30 +211,34 @@ img {
 
 .logo-n {
   font-family: "Cormorant Garamond", serif;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--navy);
-  transition: color 0.3s;
+  transition: var(--t);
 }
 
 #nav.s .logo-n {
+  font-size: 1.15rem;
   color: var(--navy);
 }
 
 .nav-tabs {
   display: flex;
   align-items: center;
-  background: rgba(15, 31, 75, 0.06);
-  border: 1px solid rgba(15, 31, 75, 0.12);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 50px;
   padding: 4px;
   gap: 2px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: var(--t);
 }
 
 #nav.s .nav-tabs {
-  background: rgba(15, 31, 75, 0.06);
-  border-color: rgba(15, 31, 75, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(0, 0, 0, 0.08);
+  padding: 3px;
 }
 
 .pg-tab {
@@ -232,6 +254,8 @@ img {
 }
 
 #nav.s .pg-tab {
+  padding: 6px 18px;
+  font-size: 0.78rem;
   color: var(--gray);
 }
 
@@ -242,12 +266,12 @@ img {
 }
 
 .pg-tab:not(.active):hover {
-  background: rgba(15, 31, 75, 0.08);
+  background: rgba(0, 0, 0, 0.04);
   color: var(--navy);
 }
 
 #nav.s .pg-tab:not(.active):hover {
-  background: rgba(15, 31, 75, 0.08);
+  background: rgba(0, 0, 0, 0.04);
   color: var(--navy);
 }
 
@@ -256,6 +280,11 @@ img {
   align-items: center;
   gap: 26px;
   list-style: none;
+  transition: var(--t);
+}
+
+#nav.s .nav-r {
+  gap: 22px;
 }
 
 .nav-r a {
@@ -266,6 +295,7 @@ img {
 }
 
 #nav.s .nav-r a {
+  font-size: 0.8rem;
   color: var(--gray2);
 }
 
@@ -280,6 +310,12 @@ img {
   border-radius: 50px;
   font-weight: 700 !important;
   box-shadow: 0 4px 14px rgba(240, 101, 32, 0.3);
+  transition: var(--t);
+}
+
+#nav.s .nav-cta {
+  padding: 7px 18px !important;
+  font-size: 0.8rem !important;
 }
 
 .nav-cta:hover {
@@ -347,6 +383,7 @@ img {
 }
 
 @keyframes wmdrift {
+
   0%,
   100% {
     transform: translateX(0);
@@ -362,11 +399,9 @@ img {
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(240, 101, 32, 0.09) 0%,
-    transparent 65%
-  );
+  background: radial-gradient(circle,
+      rgba(240, 101, 32, 0.09) 0%,
+      transparent 65%);
   top: 50%;
   left: 32%;
   transform: translate(-50%, -50%);
@@ -375,6 +410,7 @@ img {
 }
 
 @keyframes glowp {
+
   0%,
   100% {
     opacity: 0.8;
@@ -722,6 +758,7 @@ img {
 }
 
 @keyframes fbadge {
+
   0%,
   100% {
     transform: translateY(0);
@@ -883,12 +920,10 @@ img {
 .pg-ov {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.78) 0%,
-    rgba(0, 0, 0, 0.08) 55%,
-    transparent 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.08) 55%,
+      transparent 100%);
 }
 
 .pg-con {
@@ -913,15 +948,23 @@ img {
 }
 
 .tb {
-  background: rgba(30, 58, 122, 0.8);
-  color: #93c5fd;
-  border: 1px solid rgba(147, 197, 253, 0.35);
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--brand);
+}
+
+.tb i {
+  color: var(--brand);
 }
 
 .tg {
-  background: rgba(45, 95, 168, 0.8);
-  color: #bfdbfe;
-  border: 1px solid rgba(191, 219, 254, 0.35);
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--brand);
+}
+
+.tg i {
+  color: var(--brand);
 }
 
 .pg-name {
@@ -977,7 +1020,7 @@ img {
 /* FACILITIES */
 #facilities {
   padding: 100px 5%;
-  background: #f8fbff;
+  background: #ffffff;
 }
 
 .fac-grid {
@@ -1091,12 +1134,10 @@ img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(8, 18, 40, 0.38) 0%,
-    rgba(8, 18, 40, 0.2) 26%,
-    rgba(8, 18, 40, 0) 52%
-  );
+  background: linear-gradient(to top,
+      rgba(8, 18, 40, 0.38) 0%,
+      rgba(8, 18, 40, 0.2) 26%,
+      rgba(8, 18, 40, 0) 52%);
   pointer-events: none;
 }
 
@@ -1186,8 +1227,8 @@ img {
 }
 
 .r-price {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.55rem;
+  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--navy);
 }
@@ -1212,10 +1253,8 @@ img {
   position: absolute;
   inset: 0;
   opacity: 0.03;
-  background-image: radial-gradient(
-    rgba(22, 45, 94, 0.22) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(rgba(22, 45, 94, 0.22) 1px,
+      transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
 }
@@ -1482,7 +1521,27 @@ img {
 /* TESTIMONIALS */
 #testimonials {
   padding: 100px 5%;
-  background: var(--cream);
+  background: #060d1e;
+}
+
+#testimonials .s-ey {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#testimonials .s-ey::before {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#testimonials .s-t {
+  color: #fff;
+}
+
+#testimonials .s-t em {
+  color: var(--brand);
+}
+
+#testimonials .s-sub {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .testi-g {
@@ -1559,7 +1618,7 @@ img {
 /* FAQ */
 #faq {
   padding: 100px 5%;
-  background: #f8fbff;
+  background: #ffffff;
 }
 
 .faq-cols {
@@ -1787,10 +1846,8 @@ img {
   position: absolute;
   inset: 0;
   opacity: 0.025;
-  background-image: radial-gradient(
-    rgba(22, 45, 94, 0.22) 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(rgba(22, 45, 94, 0.22) 1px,
+      transparent 1px);
   background-size: 24px 24px;
   pointer-events: none;
 }
@@ -1996,7 +2053,7 @@ footer {
 /* AVAILABILITY */
 #availability {
   padding: 100px 5%;
-  background: #eef5ff;
+  background: #ffffff;
 }
 
 .avail-g {
@@ -2050,11 +2107,12 @@ footer {
 }
 
 .av-price {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.7rem;
-  font-weight: 700;
+  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
   color: var(--navy);
   margin-bottom: 20px;
+  letter-spacing: -0.5px;
 }
 
 .av-price small {

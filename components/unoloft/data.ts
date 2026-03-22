@@ -213,7 +213,7 @@ export const AVAILABILITY_CARDS: AvailabilityCard[] = [
     price: "₹16,500",
     slots: ["free", "free", "taken", "taken", "taken", "taken"],
     statusType: "avail",
-    statusIcon: "fa-solid fa-circle-check",
+    statusIcon: "fa-solid fa-bed",
     statusText: "2 Beds Available",
     ctaType: "book",
     ctaHref:
