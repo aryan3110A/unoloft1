@@ -791,7 +791,7 @@ img {
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: var(--brand);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .s-ey::before {
@@ -804,7 +804,7 @@ img {
 .s-t {
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.8rem, 3.2vw, 2.7rem);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--navy);
   line-height: 1.2;
 }
@@ -816,14 +816,15 @@ img {
 
 .s-sub {
   font-size: 0.93rem;
+  font-weight: 500;
   color: var(--gray);
   line-height: 1.8;
-  margin-top: 12px;
+  margin-top: 6px;
   max-width: 540px;
 }
 
 .sh {
-  margin-bottom: 52px;
+  margin-bottom: 14px;
 }
 
 .sh-c {
@@ -868,7 +869,7 @@ img {
 
 /* PG INTRO */
 #pg-intro {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: var(--cream);
 }
 
@@ -876,7 +877,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 26px;
-  margin-top: 52px;
+  margin-top: 18px;
 }
 
 .pg-item {
@@ -904,6 +905,12 @@ img {
 .pg-card:hover {
   transform: translateY(-9px);
   box-shadow: 0 24px 68px rgba(0, 0, 0, 0.18);
+}
+
+.pg-card.active {
+  outline: 2px solid var(--brand);
+  outline-offset: -2px;
+  box-shadow: 0 24px 68px rgba(240, 101, 32, 0.26);
 }
 
 .pg-card img {
@@ -1019,7 +1026,7 @@ img {
 
 /* FACILITIES */
 #facilities {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: #ffffff;
 }
 
@@ -1098,7 +1105,7 @@ img {
 
 /* ROOMS */
 #rooms {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: var(--cream);
 }
 
@@ -1242,7 +1249,7 @@ img {
 
 /* WHY */
 #why {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: var(--mbg);
   position: relative;
   overflow: hidden;
@@ -1371,7 +1378,7 @@ img {
 
 /* GALLERY */
 #gallery {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: #fff;
 }
 
@@ -1520,7 +1527,7 @@ img {
 
 /* TESTIMONIALS */
 #testimonials {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: #060d1e;
 }
 
@@ -1617,7 +1624,7 @@ img {
 
 /* FAQ */
 #faq {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: #ffffff;
 }
 
@@ -1714,7 +1721,7 @@ img {
 
 /* MAP */
 #map-sec {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: var(--cream);
 }
 
@@ -1723,7 +1730,7 @@ img {
 }
 
 .map-adv-t {
-  font-size: clamp(2rem, 3vw, 2.35rem);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
   font-weight: 800;
   color: var(--navy);
   line-height: 1.2;
@@ -1835,7 +1842,7 @@ img {
 
 /* CONTACT */
 #contact {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: var(--mbg);
   position: relative;
   overflow: hidden;
@@ -1877,7 +1884,7 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 .con-cd {
@@ -1934,6 +1941,84 @@ img {
   color: var(--navy);
   font-weight: 700;
   font-size: 1.08rem;
+}
+
+.con-form {
+  margin-top: 8px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(22, 45, 94, 0.1);
+  border-radius: 22px;
+  padding: 20px;
+}
+
+.con-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.con-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.con-field span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.con-field input,
+.con-field select,
+.con-field textarea {
+  width: 100%;
+  border: 1px solid rgba(22, 45, 94, 0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--navy);
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.con-field input:focus,
+.con-field select:focus,
+.con-field textarea:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(240, 101, 32, 0.14);
+}
+
+.con-field-full {
+  margin-top: 12px;
+}
+
+.con-submit {
+  margin-top: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.con-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.con-msg {
+  margin-top: 10px;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.con-msg.ok {
+  color: #15803d;
+}
+
+.con-msg.err {
+  color: #b91c1c;
 }
 
 .con-ex {
@@ -2052,7 +2137,7 @@ footer {
 
 /* AVAILABILITY */
 #availability {
-  padding: 100px 5%;
+  padding: 32px 5%;
   background: #ffffff;
 }
 
@@ -2537,6 +2622,10 @@ footer {
   }
 
   .con-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .con-form-grid {
     grid-template-columns: 1fr;
   }
 

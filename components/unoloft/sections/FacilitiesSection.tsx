@@ -1,6 +1,15 @@
-import { FACILITIES } from "@/components/unoloft/data";
+import { FACILITIES_BY_HOME } from "@/components/unoloft/data";
+import type { Home } from "@/components/unoloft/types";
 
-export default function FacilitiesSection() {
+type FacilitiesSectionProps = {
+  selectedHome: Home;
+};
+
+export default function FacilitiesSection({
+  selectedHome,
+}: FacilitiesSectionProps) {
+  const facilities = FACILITIES_BY_HOME[selectedHome];
+
   return (
     <section id="facilities">
       <div className="sh sh-c rv">
@@ -15,7 +24,7 @@ export default function FacilitiesSection() {
       </div>
 
       <div className="fac-grid">
-        {FACILITIES.map((facility) => (
+        {facilities.map((facility) => (
           <div
             className="fac-c rv"
             key={facility.name}

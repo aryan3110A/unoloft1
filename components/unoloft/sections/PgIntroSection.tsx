@@ -1,4 +1,15 @@
-export default function PgIntroSection() {
+import type { Home } from "@/components/unoloft/types";
+import { cn } from "@/components/unoloft/utils";
+
+type PgIntroSectionProps = {
+  selectedHome: Home;
+  onHomeChange: (home: Home) => void;
+};
+
+export default function PgIntroSection({
+  selectedHome,
+  onHomeChange,
+}: PgIntroSectionProps) {
   return (
     <section id="pg-intro">
       <div className="sh rv">
@@ -7,21 +18,21 @@ export default function PgIntroSection() {
           Two Homes, <em>One Family</em>
         </h2>
         <p className="s-sub">
-          Safe, premium, and vibrant co-living spaces crafted for
+          Safe, premium, and vibrant PG spaces crafted for
           Ahmedabad&apos;s young professionals and students.
         </p>
       </div>
 
       <div className="pg-grid">
-        <div
-          className="pg-item boys-only rv"
-          style={{ transitionDelay: ".05s" }}
-        >
+        <div className="pg-item rv" style={{ transitionDelay: ".05s" }}>
           <div className="pg-tag tb pg-tag-above">
             <i className="fa-solid fa-mars" /> For Boys
           </div>
 
-          <div className="pg-card">
+          <div
+            className={cn("pg-card", selectedHome === "aster" && "active")}
+            onClick={() => onHomeChange("aster")}
+          >
             <img
               src="/rooms/IMG-20260201-WA0025.jpg"
               alt="Aster Homes Boys PG"
@@ -46,28 +57,28 @@ export default function PgIntroSection() {
           </div>
         </div>
 
-        <div
-          className="pg-item girls-only rv"
-          style={{ transitionDelay: ".12s" }}
-        >
-          <div className="pg-tag tg pg-tag-above">
-            <i className="fa-solid fa-venus" /> For Girls
+        <div className="pg-item rv" style={{ transitionDelay: ".12s" }}>
+          <div className="pg-tag tb pg-tag-above">
+            <i className="fa-solid fa-mars" /> For Boys
           </div>
 
-          <div className="pg-card">
+          <div
+            className={cn("pg-card", selectedHome === "iris" && "active")}
+            onClick={() => onHomeChange("iris")}
+          >
             <img
               src="/rooms/IMG-20260201-WA0022.jpg"
-              alt="Iris Homes Girls PG"
+              alt="Iris Homes Boys PG"
             />
             <div className="pg-ov" />
             <div className="pg-con">
               <div className="pg-name">Iris Homes</div>
               <p className="pg-desc">
-                Elegantly designed for safety and sisterhood. A warm, secure
-                sanctuary where women grow and belong.
+                Elegantly designed for comfort and brotherhood. A warm, secure
+                sanctuary where men grow and belong.
               </p>
               <div className="pg-feats">
-                <span className="pg-feat">Lady Warden</span>
+                <span className="pg-feat">Dedicated Warden</span>
                 <span className="pg-feat">Premium Interiors</span>
                 <span className="pg-feat">CCTV</span>
                 <span className="pg-feat">Meals Included</span>

@@ -1,19 +1,12 @@
-import type { Mode } from "@/components/unoloft/types";
 import { cn } from "@/components/unoloft/utils";
 
 type MobileMenuProps = {
   open: boolean;
-  mode: Mode;
-  onModeChange: (mode: Mode) => void;
   onClose: () => void;
 };
 
-const MODES: Mode[] = ["all", "boys", "girls"];
-
 export default function MobileMenu({
   open,
-  mode,
-  onModeChange,
   onClose,
 }: MobileMenuProps) {
   return (
@@ -27,22 +20,6 @@ export default function MobileMenu({
         <span className="mob-x" onClick={onClose}>
           <i className="fa-solid fa-xmark" />
         </span>
-
-        <div className="mob-tabs-w">
-          {MODES.map((value) => (
-            <button
-              key={value}
-              className={cn("pg-tab", mode === value && "active")}
-              data-mode={value}
-              onClick={() => {
-                onModeChange(value);
-                onClose();
-              }}
-            >
-              {value === "all" ? "All" : value === "boys" ? "Boys" : "Girls"}
-            </button>
-          ))}
-        </div>
 
         <a href="#pg-intro" onClick={onClose}>
           About

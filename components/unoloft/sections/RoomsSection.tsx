@@ -37,9 +37,6 @@ export default function RoomsSection() {
                   </span>
                 ))}
               </div>
-              <div className="r-price">
-                {room.price} <small>/ month</small>
-              </div>
             </div>
           </div>
         ))}

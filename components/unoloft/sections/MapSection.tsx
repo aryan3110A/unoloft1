@@ -1,26 +1,40 @@
-import { MAP_CARDS } from "@/components/unoloft/data";
-import { cn } from "@/components/unoloft/utils";
+import type { Home } from "@/components/unoloft/types";
 
-const LOCATION_ADVANTAGES = [
-  {
-    name: "Nirma University",
-    time: "Approx. 10 mins",
-  },
-  {
-    name: "Silver Oak University",
-    time: "Approx. 5 mins",
-  },
-  {
-    name: "SG Highway",
-    time: "Approx. 2 mins",
-  },
-  {
-    name: "Gota Circle",
-    time: "Approx. 2 mins",
-  },
-];
+type MapSectionProps = {
+  selectedHome: Home;
+};
 
-export default function MapSection() {
+const ASTER_DATA = {
+  advantages: [
+    { name: "Nirma University", time: "Approx. 10 mins" },
+    { name: "Silver Oak University", time: "Approx. 5 mins" },
+    { name: "SG Highway", time: "Approx. 2 mins" },
+    { name: "Gota Circle", time: "Approx. 2 mins" },
+  ],
+  address:
+    "Royal Lakend Gota - Jagatpur Road, Sarkhej - Gandhinagar Hwy, behind Gota Lake, opposite Royal Heights, Ahmedabad, Gujarat 382481.",
+  mapLink:
+    "https://www.google.com/maps?q=Royal%20Lakend%20Gota%20Jagatpur%20Road%20Sarkhej%20Gandhinagar%20Hwy%20behind%20Gota%20Lake%20opposite%20Royal%20Heights%20Ahmedabad%20Gujarat%20382481",
+  mapEmbed:
+    "https://www.google.com/maps?q=Royal%20Lakend%20Gota%20Jagatpur%20Road%20Sarkhej%20Gandhinagar%20Hwy%20behind%20Gota%20Lake%20opposite%20Royal%20Heights%20Ahmedabad%20Gujarat%20382481&output=embed",
+};
+
+const IRIS_DATA = {
+  advantages: [
+    { name: "Nirma University", time: "1 km away" },
+    { name: "Vaishnodevi Circle", time: "Approx. 2 mins" },
+  ],
+  address:
+    "Behind Nirma University, Beside Adani Pratham, Tragad, Ahmedabad.",
+  mapLink:
+    "https://www.google.com/maps/place/Iris+House+By+Unoloft+%7C+Hostel%2FP.G.+near+Nirma+University/@23.1273093,72.4747728,12814m/data=!3m1!1e3!4m10!1m2!2m1!1siris+homes+by+unoloft!3m6!1s0x395e839f3f87e59b:0x110995622f32aad1!8m2!3d23.1273093!4d72.5509905!15sChVpcmlzIGhvbWVzIGJ5IHVub2xvZnRaFyIVaXJpcyBob21lcyBieSB1bm9sb2Z0kgERc3R1ZGVudF9kb3JtaXRvcnngAQA!16s%2Fg%2F11xmgynqjm?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D",
+  mapEmbed:
+    "https://www.google.com/maps?q=Iris%20House%20By%20Unoloft%20Hostel%20P.G.%20near%20Nirma%20University&output=embed",
+};
+
+export default function MapSection({ selectedHome }: MapSectionProps) {
+  const mapData = selectedHome === "iris" ? IRIS_DATA : ASTER_DATA;
+
   return (
     <section id="map-sec">
       <div className="sh rv">
@@ -42,7 +56,7 @@ export default function MapSection() {
         </p>
 
         <div className="map-adv-g">
-          {LOCATION_ADVANTAGES.map((item) => (
+          {mapData.advantages.map((item) => (
             <article className="map-adv-c" key={item.name}>
               <h4>{item.name}</h4>
               <p>{item.time}</p>
@@ -54,28 +68,46 @@ export default function MapSection() {
       <div className="map-g">
         <div className="rvl">
           <div className="map-cards">
-            {MAP_CARDS.map((card) => (
-              <div
-                className={cn(
-                  "map-card",
-                  card.mode === "boys" && "boys-only",
-                  card.mode === "girls" && "girls-only",
-                )}
-                key={`${card.title}-${card.value}`}
-              >
-                <div className="map-ic">
-                  <i className={card.icon} />
-                </div>
-                <div>
-                  <h4>{card.title}</h4>
-                  <p>{card.value}</p>
-                </div>
+            <div className="map-card">
+              <div className="map-ic">
+                <i className="fa-solid fa-location-dot" />
               </div>
-            ))}
+              <div>
+                <h4>Address</h4>
+                <p>{mapData.address}</p>
+              </div>
+            </div>
+            <div className="map-card">
+              <div className="map-ic">
+                <i className="fa-solid fa-phone" />
+              </div>
+              <div>
+                <h4>Nilesh Patel (Nirma Alumni)</h4>
+                <p>+91 70433 06301</p>
+              </div>
+            </div>
+            <div className="map-card">
+              <div className="map-ic">
+                <i className="fa-solid fa-phone" />
+              </div>
+              <div>
+                <h4>Dhwanit Pansuriya (Nirma Alumni)</h4>
+                <p>+91 99099 01291</p>
+              </div>
+            </div>
+            <div className="map-card">
+              <div className="map-ic">
+                <i className="fa-solid fa-clock" />
+              </div>
+              <div>
+                <h4>Office Hours</h4>
+                <p>Mon-Sat: 9 AM - 8 PM · Sun: 10 AM - 5 PM</p>
+              </div>
+            </div>
           </div>
 
           <a
-            href="https://www.google.com/maps?q=Royal%20Lakend%20Gota%20Jagatpur%20Road%20Sarkhej%20Gandhinagar%20Hwy%20behind%20Gota%20Lake%20opposite%20Royal%20Heights%20Ahmedabad%20Gujarat%20382481"
+            href={mapData.mapLink}
             target="_blank"
             className="btn-ora"
             style={{
@@ -91,7 +123,7 @@ export default function MapSection() {
 
         <div className="map-em rvr">
           <iframe
-            src="https://www.google.com/maps?q=Royal%20Lakend%20Gota%20Jagatpur%20Road%20Sarkhej%20Gandhinagar%20Hwy%20behind%20Gota%20Lake%20opposite%20Royal%20Heights%20Ahmedabad%20Gujarat%20382481&output=embed"
+            src={mapData.mapEmbed}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

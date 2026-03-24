@@ -1,48 +1,41 @@
 import { GALLERY_ITEMS } from "@/components/unoloft/data";
-import type { GalleryFilter, Mode } from "@/components/unoloft/types";
+import type { GalleryFilter, Home } from "@/components/unoloft/types";
 import { cn } from "@/components/unoloft/utils";
 
 type GallerySectionProps = {
-  mode: Mode;
+  selectedHome: Home;
   filter: GalleryFilter;
   onFilterChange: (filter: GalleryFilter) => void;
   onOpenLightbox: (index: number) => void;
 };
 
 function shouldShowItem(
-  mode: Mode,
+  selectedHome: Home,
   filter: GalleryFilter,
   category: Exclude<GalleryFilter, "all">,
 ) {
+  const selectedRoomCategory =
+    selectedHome === "aster" ? "boys-room" : "girls-room";
+
   if (filter === "all") {
-    if (mode === "boys") {
-      return (
-        category === "boys-room" ||
-        category === "common" ||
-        category === "facilities"
-      );
-    }
-
-    if (mode === "girls") {
-      return (
-        category === "girls-room" ||
-        category === "common" ||
-        category === "facilities"
-      );
-    }
-
-    return true;
+    return (
+      category === selectedRoomCategory ||
+      category === "common" ||
+      category === "facilities"
+    );
   }
 
   return category === filter;
 }
 
 export default function GallerySection({
-  mode,
+  selectedHome,
   filter,
   onFilterChange,
   onOpenLightbox,
 }: GallerySectionProps) {
+  const roomFilter = selectedHome === "aster" ? "boys-room" : "girls-room";
+
   return (
     <section id="gallery">
       <div className="sh sh-c rv">
@@ -63,16 +56,10 @@ export default function GallerySection({
           All
         </button>
         <button
-          className={cn("gf boys-only", filter === "boys-room" && "active")}
-          onClick={() => onFilterChange("boys-room")}
+          className={cn("gf", filter === roomFilter && "active")}
+          onClick={() => onFilterChange(roomFilter)}
         >
-          Boys Rooms
-        </button>
-        <button
-          className={cn("gf girls-only", filter === "girls-room" && "active")}
-          onClick={() => onFilterChange("girls-room")}
-        >
-          Girls Rooms
+          {selectedHome === "aster" ? "Aster Rooms" : "Iris Rooms"}
         </button>
         <button
           className={cn("gf", filter === "common" && "active")}
@@ -90,7 +77,7 @@ export default function GallerySection({
 
       <div className="gal-masonry" id="galGrid">
         {GALLERY_ITEMS.map((item, index) => {
-          const visible = shouldShowItem(mode, filter, item.category);
+          const visible = shouldShowItem(selectedHome, filter, item.category);
 
           return (
             <div

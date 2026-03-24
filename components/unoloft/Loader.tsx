@@ -10,7 +10,7 @@ export default function Loader({ done }: LoaderProps) {
       <div className="ldr-name">
         Uno<span>loft</span>
       </div>
-      <div className="ldr-sub">Premium Co-Living · Ahmedabad</div>
+      <div className="ldr-sub">Premium PG · Ahmedabad</div>
       <div className="ldr-bar">
         <div className="ldr-fill" />
       </div>

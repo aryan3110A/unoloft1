@@ -1,4 +1,5 @@
 export type Mode = "all" | "boys" | "girls";
+export type Home = "aster" | "iris";
 
 export type GalleryFilter =
   | "all"

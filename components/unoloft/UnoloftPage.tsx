@@ -17,13 +17,14 @@ import MapSection from "@/components/unoloft/sections/MapSection";
 import PgIntroSection from "@/components/unoloft/sections/PgIntroSection";
 import RoomsSection from "@/components/unoloft/sections/RoomsSection";
 import TestimonialsSection from "@/components/unoloft/sections/TestimonialsSection";
-import type { GalleryFilter, Mode } from "@/components/unoloft/types";
+import type { GalleryFilter, Home, Mode } from "@/components/unoloft/types";
 
 const SCROLL_OFFSET = 75;
 
 export default function UnoloftPage() {
   const [loaderDone, setLoaderDone] = useState(false);
-  const [mode, setMode] = useState<Mode>("all");
+  const mode: Mode = "all";
+  const [selectedHome, setSelectedHome] = useState<Home>("aster");
   const [galleryFilter, setGalleryFilter] = useState<GalleryFilter>("all");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -36,11 +37,6 @@ export default function UnoloftPage() {
     () => GALLERY_ITEMS.map((item) => item.lightboxImage),
     [],
   );
-
-  const onModeChange = useCallback((nextMode: Mode) => {
-    setMode(nextMode);
-    setGalleryFilter("all");
-  }, []);
 
   const onLightboxOpen = useCallback((index: number) => {
     setLightboxIndex(index);
@@ -68,10 +64,6 @@ export default function UnoloftPage() {
 
     return () => window.clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-mode", mode);
-  }, [mode]);
 
   useEffect(() => {
     const onScroll = () => {
@@ -102,7 +94,7 @@ export default function UnoloftPage() {
     elements.forEach((element) => observer.observe(element));
 
     return () => observer.disconnect();
-  }, []);
+  }, [selectedHome]);
 
   useEffect(() => {
     if (lightboxOpen || mobileOpen) {
@@ -184,25 +176,27 @@ export default function UnoloftPage() {
 
       <MobileMenu
         open={mobileOpen}
-        mode={mode}
-        onModeChange={onModeChange}
         onClose={() => setMobileOpen(false)}
       />
 
       <Navbar
-        mode={mode}
         navScrolled={navScrolled}
-        onModeChange={onModeChange}
         onMobileOpen={() => setMobileOpen(true)}
       />
 
       <HeroSection mode={mode} />
-      <PgIntroSection />
-      <FacilitiesSection />
+      <PgIntroSection
+        selectedHome={selectedHome}
+        onHomeChange={(home) => {
+          setSelectedHome(home);
+          setGalleryFilter("all");
+        }}
+      />
+      <FacilitiesSection selectedHome={selectedHome} />
       <RoomsSection />
 
       <GallerySection
-        mode={mode}
+        selectedHome={selectedHome}
         filter={galleryFilter}
         onFilterChange={setGalleryFilter}
         onOpenLightbox={onLightboxOpen}
@@ -217,8 +211,8 @@ export default function UnoloftPage() {
         }}
       />
 
-      <MapSection />
-      <ContactSection />
+      <MapSection selectedHome={selectedHome} />
+      <ContactSection selectedHome={selectedHome} />
       <FooterSection />
       <BackToTopButton show={showBackToTop} />
     </>

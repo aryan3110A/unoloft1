@@ -1,4 +1,4 @@
-export default function FooterSection() {
+﻿export default function FooterSection() {
   return (
     <footer>
       <div className="ft-main">
@@ -18,8 +18,8 @@ export default function FooterSection() {
             </span>
           </div>
           <p className="ft-desc">
-            Ahmedabad&apos;s most premium paying guest accommodation for boys
-            and girls. Your home, away from home — since 2019.
+            Ahmedabad&apos;s most premium paying guest accommodation for boys.
+            Your home, away from home - since 2021.
           </p>
           <div className="ft-socs">
             <a href="#" className="ft-soc">
@@ -68,7 +68,7 @@ export default function FooterSection() {
               <a href="#pg-intro">Aster Homes (Boys)</a>
             </li>
             <li>
-              <a href="#pg-intro">Iris Homes (Girls)</a>
+              <a href="#pg-intro">Iris Homes (Boys)</a>
             </li>
             <li>
               <a href="#rooms">Single Room</a>
@@ -86,10 +86,10 @@ export default function FooterSection() {
           <h4>Contact</h4>
           <ul className="ft-lks">
             <li>
-              <a href="tel:+91XXXXXXXXXX">+91 XXXXX XXXXX</a>
+              <a href="tel:+917043306301">7043306301</a>
             </li>
             <li>
-              <a href="https://wa.me/91XXXXXXXXXX">WhatsApp Us</a>
+              <a href="tel:+919909901291">9909901291</a>
             </li>
             <li>
               <a href="mailto:hello@unoloft.com">hello@unoloft.com</a>
@@ -102,7 +102,7 @@ export default function FooterSection() {
       </div>
 
       <div className="ft-bar">
-        <div>© 2025 Unoloft. All rights reserved.</div>
+        <div>© 2026 Unoloft. All rights reserved.</div>
         <div className="ft-bar-lks">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
@@ -111,3 +111,4 @@ export default function FooterSection() {
     </footer>
   );
 }
+

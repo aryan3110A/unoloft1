@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AvailabilityCard,
   Facility,
   FaqItem,
@@ -7,6 +7,7 @@ import type {
   HeroText,
   MapCard,
   Mode,
+  Home,
   Room,
   Testimonial,
   WhyFeature,
@@ -17,17 +18,17 @@ export const HERO_TEXT: Record<Mode, HeroText> = {
   all: {
     h1: "Your PG Hunt",
     h2: "is finally over.",
-    ey: "Premium Co-Living · Ahmedabad",
+    ey: "Premium PG Â· Ahmedabad",
   },
   boys: {
     h1: "Built for the",
     h2: "Modern Man.",
-    ey: "Aster Homes · Boys PG · Ahmedabad",
+    ey: "Aster Homes Â· Boys PG Â· Ahmedabad",
   },
   girls: {
     h1: "Designed for",
     h2: "Her Comfort.",
-    ey: "Iris Homes · Girls PG · Ahmedabad",
+    ey: "Iris Homes Â· Girls PG Â· Ahmedabad",
   },
 };
 
@@ -74,12 +75,12 @@ export const HERO_MOSAIC_CARDS: HeroMosaicCard[] = [
   },
 ];
 
-export const FACILITIES: Facility[] = [
+export const ASTER_FACILITIES: Facility[] = [
   {
     icon: "fa-solid fa-wifi",
     name: "High-Speed WiFi",
     description:
-      "Gigabit fiber internet throughout — perfect for work, classes & streaming.",
+      "Gigabit fiber internet throughout â€” perfect for work, classes & streaming.",
     delay: ".0s",
   },
   {
@@ -133,16 +134,16 @@ export const FACILITIES: Facility[] = [
     delay: ".48s",
   },
   {
-    icon: "fa-solid fa-car",
+    icon: "fa-solid fa-motorcycle",
     name: "Free Parking",
-    description: "Secure covered parking for bikes and cars at no extra cost.",
+    description: "Secure covered parking for bikes at no extra cost.",
     delay: ".54s",
   },
   {
     icon: "fa-solid fa-book-open",
     name: "Study Area",
     description:
-      "Quiet, well-lit study rooms — ideal for focused work and exam prep.",
+      "Quiet, well-lit study rooms â€” ideal for focused work and exam prep.",
     delay: ".60s",
   },
   {
@@ -159,14 +160,118 @@ export const FACILITIES: Facility[] = [
       "Round-the-clock hot water for a refreshing start every single day.",
     delay: ".72s",
   },
+];
+
+export const IRIS_FACILITIES: Facility[] = [
   {
-    icon: "fa-solid fa-couch",
-    name: "Common Lounge",
+    icon: "fa-solid fa-kitchen-set",
+    name: "Live Kitchen & Dining",
+    description: "Separate live kitchen and dining facility for residents.",
+    delay: ".0s",
+  },
+  {
+    icon: "fa-solid fa-glass-water",
+    name: "Purified Drinking Water",
+    description: "Purified drinking water available throughout the day.",
+    delay: ".06s",
+  },
+  {
+    icon: "fa-solid fa-utensils",
+    name: "Authentic Indian Meals",
     description:
-      "Spacious social areas with TV, games & space to unwind and connect.",
+      "Hot, delicious, nutritious Indian meals served 4 times daily in live kitchen.",
+    delay: ".12s",
+  },
+  {
+    icon: "fa-solid fa-fire-burner",
+    name: "Induction & Vessels",
+    description: "Induction and vessels available for personal use.",
+    delay: ".18s",
+  },
+  {
+    icon: "fa-solid fa-temperature-low",
+    name: "Refrigerator & Geyser",
+    description: "In-room refrigerator and geyser support for daily comfort.",
+    delay: ".24s",
+  },
+  {
+    icon: "fa-solid fa-wifi",
+    name: "High-Speed WiFi",
+    description: "High speed WiFi connectivity across the property.",
+    delay: ".30s",
+  },
+  {
+    icon: "fa-solid fa-broom",
+    name: "Daily Cleaning Service",
+    description: "Cleaning service provided on a daily basis.",
+    delay: ".36s",
+  },
+  {
+    icon: "fa-solid fa-shirt",
+    name: "Laundry",
+    description: "Fully automatic washing machine facility available.",
+    delay: ".42s",
+  },
+  {
+    icon: "fa-solid fa-book-open",
+    name: "Library & Recreation",
+    description: "Library and recreational area for focused and leisure time.",
+    delay: ".48s",
+  },
+  {
+    icon: "fa-solid fa-video",
+    name: "CCTV Surveillance",
+    description: "CCTV surveillance across key entry and common areas.",
+    delay: ".54s",
+  },
+  {
+    icon: "fa-solid fa-motorcycle",
+    name: "Parking Facility",
+    description: "Dedicated parking facility for residents.",
+    delay: ".60s",
+  },
+  {
+    icon: "fa-solid fa-truck-fast",
+    name: "Transport Facility",
+    description: "Transport support available for convenient commuting.",
+    delay: ".66s",
+  },
+  {
+    icon: "fa-solid fa-shield-halved",
+    name: "24/7 Security",
+    description: "Round-the-clock security coverage for complete safety.",
+    delay: ".72s",
+  },
+  {
+    icon: "fa-solid fa-snowflake",
+    name: "Fully Furnished A.C Rooms",
+    description: "Fully furnished air-conditioned rooms with modern setup.",
     delay: ".78s",
   },
+  {
+    icon: "fa-solid fa-door-open",
+    name: "Spacious Cupboard",
+    description: "Spacious personal cupboard in each room.",
+    delay: ".84s",
+  },
+  {
+    icon: "fa-solid fa-bed",
+    name: "Bed with Extra Storage",
+    description: "Comfortable beds with added storage space.",
+    delay: ".90s",
+  },
+  {
+    icon: "fa-solid fa-chair",
+    name: "Study Table & Chair",
+    description: "Dedicated study table with chair in every room.",
+    delay: ".96s",
+  },
 ];
+
+export const FACILITIES_BY_HOME: Record<Home, Facility[]> = {
+  aster: ASTER_FACILITIES,
+  iris: IRIS_FACILITIES,
+};
 
 export const ROOMS: Room[] = [
   {
@@ -176,9 +281,9 @@ export const ROOMS: Room[] = [
     label: "Single Occupancy",
     name: "Private Single Sharing",
     description:
-      "Your personal sanctuary — fully furnished private room with attached or shared bath.",
+      "Your personal sanctuary â€” fully furnished private room with attached or shared bath.",
     chips: ["AC", "Fan", "Study Table", "Wardrobe"],
-    price: "₹16,500",
+    price: "â‚¹16,500",
   },
   {
     image: "/rooms/IMG-20260201-WA0025.jpg",
@@ -187,9 +292,9 @@ export const ROOMS: Room[] = [
     label: "Double Sharing",
     name: "Two Sharing",
     description:
-      "Spacious room with a friendly roommate — perfect blend of privacy and community.",
+      "Spacious room with a friendly roommate â€” perfect blend of privacy and community.",
     chips: ["AC", "Fan", "Study Table", "Wardrobe"],
-    price: "₹14,500",
+    price: "â‚¹14,500",
     delay: ".1s",
   },
   {
@@ -199,9 +304,9 @@ export const ROOMS: Room[] = [
     label: "Triple Sharing",
     name: "Triple Share Room",
     description:
-      "Budget-friendly with a great community vibe — ideal for students on a budget.",
+      "Budget-friendly with a great community vibe â€” ideal for students on a budget.",
     chips: ["AC", "Fan", "Study Table", "Wardrobe"],
-    price: "₹11,000",
+    price: "â‚¹11,000",
     delay: ".2s",
   },
 ];
@@ -210,7 +315,7 @@ export const AVAILABILITY_CARDS: AvailabilityCard[] = [
   {
     sharing: "1 Sharing",
     name: "Private Single Sharing",
-    price: "₹16,500",
+    price: "â‚¹16,500",
     slots: ["free", "free", "taken", "taken", "taken", "taken"],
     statusType: "avail",
     statusIcon: "fa-solid fa-bed",
@@ -223,7 +328,7 @@ export const AVAILABILITY_CARDS: AvailabilityCard[] = [
   {
     sharing: "2 Sharing",
     name: "Two Sharing",
-    price: "₹14,500",
+    price: "â‚¹14,500",
     slots: [
       "free",
       "taken",
@@ -246,7 +351,7 @@ export const AVAILABILITY_CARDS: AvailabilityCard[] = [
   {
     sharing: "3 Sharing",
     name: "Triple Share Room",
-    price: "₹11,000",
+    price: "â‚¹11,000",
     slots: [
       "taken",
       "taken",
@@ -272,18 +377,18 @@ export const WHY_POINTS: WhyPoint[] = [
     icon: "fa-solid fa-location-dot",
     title: "Prime Location",
     description:
-      "Near Nirma University, Silver Oak University, SG Highway & Gota Circle — effortless daily commuting.",
+      "Near Nirma University, Silver Oak University, SG Highway & Gota Circle â€” effortless daily commuting.",
   },
   {
     icon: "fa-solid fa-headset",
     title: "Responsive Management",
-    description: "Any issue resolved in under 2 hours — warden available 24/7.",
+    description: "Any issue resolved in under 2 hours â€” warden available 24/7.",
   },
   {
     icon: "fa-solid fa-people-group",
     title: "Community & Events",
     description:
-      "Festivals, movie nights & outings — friendships that last a lifetime.",
+      "Festivals, movie nights & outings â€” friendships that last a lifetime.",
   },
   {
     icon: "fa-solid fa-indian-rupee-sign",
@@ -294,32 +399,32 @@ export const WHY_POINTS: WhyPoint[] = [
 
 export const WHY_FEATURES: WhyFeature[] = [
   {
-    emoji: "🏠",
+    emoji: "ðŸ ",
     title: "Fully Furnished",
-    description: "Move in with just your bag — everything ready for you.",
+    description: "Move in with just your bag â€” everything ready for you.",
   },
   {
-    emoji: "🔒",
+    emoji: "ðŸ”’",
     title: "Total Safety",
     description: "Biometric entry, CCTV, security guards round the clock.",
   },
   {
-    emoji: "🍽️",
+    emoji: "ðŸ½ï¸",
     title: "Fresh Daily Meals",
     description: "Healthy, hygienic, home-style food cooked fresh every day.",
   },
   {
-    emoji: "💪",
+    emoji: "ðŸ’ª",
     title: "Wellness First",
     description: "Gym, yoga space & mental wellness initiatives included.",
   },
   {
-    emoji: "📶",
+    emoji: "ðŸ“¶",
     title: "Always Connected",
     description: "Gigabit fiber WiFi with zero downtime for work & study.",
   },
   {
-    emoji: "🌿",
+    emoji: "ðŸŒ¿",
     title: "Eco Friendly",
     description: "Solar power, water harvesting & sustainable practices.",
   },
@@ -398,12 +503,11 @@ export const TESTIMONIALS: Testimonial[] = [
       "fa-solid fa-star",
     ],
     quote: '"',
-    text: "Aster Homes has been my home for 2 years. The food is fantastic, gym is a lifesaver, and management is incredibly responsive. Couldn't ask for more!",
+    text: "Food quality is excellent and well-maintained. Daily room cleaning keeps everything hygienic and comfortable. Services are organized and the stay is hassle-free.",
     avatar: "R",
     avatarBg: "#1e3a7a",
-    name: "Rahul Mehta",
-    role: "Software Engineer · Aster Homes",
-    mode: "boys",
+    name: "Rutul Suthar",
+    role: "Google Review - Aster Homes",
   },
   {
     stars: [
@@ -414,13 +518,12 @@ export const TESTIMONIALS: Testimonial[] = [
       "fa-solid fa-star",
     ],
     quote: '"',
-    text: "As a girl in a new city, safety was everything. Iris Homes gave me exactly that — plus a wonderful community. I feel totally at home here.",
-    avatar: "P",
-    avatarBg: "#6d28d9",
-    name: "Priya Sharma",
-    role: "MBA Student · Iris Homes",
+    text: "Very good hygienic food with a homely taste. Housekeeping is regular, the environment is calm and clean, and the PG is very well managed overall.",
+    avatar: "H",
+    avatarBg: "#2d5fa8",
+    name: "Himanshu Dadhich",
+    role: "Google Review - Aster Homes",
     delay: ".1s",
-    mode: "girls",
   },
   {
     stars: [
@@ -428,15 +531,47 @@ export const TESTIMONIALS: Testimonial[] = [
       "fa-solid fa-star",
       "fa-solid fa-star",
       "fa-solid fa-star",
-      "fa-solid fa-star-half-stroke",
+      "fa-solid fa-star",
     ],
     quote: '"',
-    text: "The study area is a game-changer during exams. WiFi is blazing fast and staff always make you feel at home. Worth every rupee!",
-    avatar: "A",
-    avatarBg: "var(--brand)",
-    name: "Arjun Kapoor",
-    role: "Engineering Student · Aster Homes",
+    text: "Rooms are clean, spacious, and well-maintained with Wi-Fi, AC, and comfortable beds. Staff is friendly and helpful, and the food is tasty and nutritious.",
+    avatar: "N",
+    avatarBg: "#f06520",
+    name: "Nilam Menat",
+    role: "Google Review - Aster Homes",
     delay: ".2s",
+  },
+  {
+    stars: [
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+    ],
+    quote: '"',
+    text: "Good homemade-style food, reliable housekeeping, and a supportive atmosphere for B.Tech students. The place feels comfortable and flexible like home.",
+    avatar: "M",
+    avatarBg: "#1e3a7a",
+    name: "Hiralal Meena",
+    role: "Google Review - Aster Homes",
+    delay: ".3s",
+  },
+  {
+    stars: [
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+      "fa-solid fa-star",
+    ],
+    quote: '"',
+    text: "I checked many PG options before choosing this one. It stood out for comfort, management support, and overall value for long-term stay.",
+    avatar: "S",
+    avatarBg: "var(--brand)",
+    name: "Hardik Saparia",
+    role: "Google Review - Aster Homes",
+    delay: ".4s",
   },
 ];
 
@@ -496,6 +631,7 @@ export const MAP_CARDS: MapCard[] = [
   {
     icon: "fa-solid fa-clock",
     title: "Office Hours",
-    value: "Mon–Sat: 9 AM – 8 PM · Sun: 10 AM – 5 PM",
+    value: "Monâ€“Sat: 9 AM â€“ 8 PM Â· Sun: 10 AM â€“ 5 PM",
   },
 ];
+
