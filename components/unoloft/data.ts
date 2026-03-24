@@ -382,7 +382,8 @@ export const WHY_POINTS: WhyPoint[] = [
   {
     icon: "fa-solid fa-headset",
     title: "Responsive Management",
-    description: "Any issue resolved in under 2 hours â€” warden available 24/7.",
+    description:
+      "Any issue resolved in under 2 hours â€” warden available 24/7.",
   },
   {
     icon: "fa-solid fa-people-group",
@@ -634,4 +635,3 @@ export const MAP_CARDS: MapCard[] = [
     value: "Monâ€“Sat: 9 AM â€“ 8 PM Â· Sun: 10 AM â€“ 5 PM",
   },
 ];
-

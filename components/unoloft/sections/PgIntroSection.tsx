@@ -18,8 +18,8 @@ export default function PgIntroSection({
           Two Homes, <em>One Family</em>
         </h2>
         <p className="s-sub">
-          Safe, premium, and vibrant PG spaces crafted for
-          Ahmedabad&apos;s young professionals and students.
+          Safe, premium, and vibrant PG spaces crafted for Ahmedabad&apos;s
+          young professionals and students.
         </p>
       </div>
 
